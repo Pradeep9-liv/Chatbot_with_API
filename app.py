@@ -31,7 +31,11 @@ limiter = Limiter(
 def index():
     session['chat_history'] = []
     return render_template("index.html")
-
+    
+@app.route('/healthz')
+def health_check():
+    return "OK", 200
+    
 @app.route('/ask', methods=['POST'])
 @limiter.limit("5 per minute")   # Apply limit on this endpoint
 def ask():
