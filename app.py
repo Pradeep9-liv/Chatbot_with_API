@@ -8,10 +8,17 @@ app = Flask(__name__)
 # Set Flask secret key from environment variable (fallback only used for local dev)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "e67e0d7cc234cbcf0cb56936a26302581178ac75d5b5e45d4b937bcaec3475a9")
 
+# Rate Limiter config (5 requests per minute per IP)
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["5 per minute"]
+)
+
 # Read Cohere API key from environment variable
 cohere_api_key = os.getenv("COHERE_API_KEY")
 if not cohere_api_key:
-    raise ValueError("⚠️ COHERE_API_KEY environment variable not set!")
+    raise ValueError("COHERE_API_KEY environment variable not set!")
 co = cohere.Client("cohere_api_key")  # Replace with your API key
 
 # Rate Limiter config (5 requests per minute per IP)
@@ -51,4 +58,5 @@ def ask():
     return jsonify({'reply': bot_reply})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
