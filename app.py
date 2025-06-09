@@ -6,7 +6,7 @@ from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
 # Set Flask secret key from environment variable (fallback only used for local dev)
-app.secret_key = os.getenv("FLASK_SECRET_KEY", "your_default_dev_secret_key")
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "e67e0d7cc234cbcf0cb56936a26302581178ac75d5b5e45d4b937bcaec3475a9")
 
 # Read Cohere API key from environment variable
 cohere_api_key = os.getenv("COHERE_API_KEY")
