@@ -10,10 +10,10 @@ app.secret_key = os.getenv("FLASK_SECRET_KEY", "fallback_dev_secret")
 
 # Rate Limiter config (5 requests per minute per IP)
 limiter = Limiter(
-    get_remote_address,
-    app=app,
+    key_func=get_remote_address,
     default_limits=["5 per minute"]
 )
+limiter.init_app(app)
 
 # Read Cohere API key from environment variable
 cohere_api_key = os.getenv("COHERE_API_KEY")
@@ -21,12 +21,6 @@ if not cohere_api_key:
     raise ValueError("COHERE_API_KEY environment variable not set!")
 co = cohere.Client("cohere_api_key")  # Replace with your API key
 
-# Rate Limiter config (5 requests per minute per IP)
-limiter = Limiter(
-    get_remote_address,
-    app=app,
-    default_limits=["5 per minute"]
-)
 @app.route('/')
 def index():
     session['chat_history'] = []
