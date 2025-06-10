@@ -287,6 +287,9 @@ button[type="submit"]:hover {
 #mic-btn.listening {
   background-color: #d32f2f;
 }
+#mic-btn:hover {
+  background-color: #004d40;
+}
 /* Responsive design for mobile devices */
 @media (max-width: 600px) {
   header {
@@ -322,8 +325,4 @@ button[type="submit"]:hover {
   .theme-toggle {
     right: 10px;
   }
-}
-
-#mic-btn:hover {
-  background-color: #004d40;
 }
