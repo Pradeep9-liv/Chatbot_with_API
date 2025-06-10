@@ -1,8 +1,8 @@
-import os
-from flask import Flask, render_template, request, jsonify, session
-import cohere
+from flask import Flask, render_template, request, jsonify, session, response
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+import cohere
+import os
 
 app = Flask(__name__)
 # Set Flask secret key from environment variable (fallback only used for local dev)
@@ -19,17 +19,14 @@ limiter.init_app(app)
 cohere_api_key = os.getenv("COHERE_API_KEY")
 if not cohere_api_key:
     raise ValueError("COHERE_API_KEY environment variable not set!")
-co = cohere.Client("cohere_api_key")  # Replace with your API key
+co = cohere.Client(cohere_api_key)
+
 
 @app.route('/')
 def index():
     session['chat_history'] = []
     return render_template("index.html")
-    
-@app.route('/healthz')
-def health_check():
-    return "OK", 200
-    
+
 @app.route('/ask', methods=['POST'])
 @limiter.limit("5 per minute")   # Apply limit on this endpoint
 def ask():
@@ -54,6 +51,10 @@ def ask():
     history.append({'user': user_message, 'bot': bot_reply})
     session['chat_history'] = history
     return jsonify({'reply': bot_reply})
+@app.route("/healthz")
+@limiter.exempt
+def healthz():
+    return Response("ok", status=200)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
