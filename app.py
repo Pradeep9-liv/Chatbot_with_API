@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, session, response
+from flask import Flask, render_template, request, jsonify, session, Response
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import cohere
