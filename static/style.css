@@ -287,6 +287,42 @@ button[type="submit"]:hover {
 #mic-btn.listening {
   background-color: #d32f2f;
 }
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+  header {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  #chat-box {
+    padding: 10px;
+  }
+
+  .user, .bot {
+    font-size: 0.9rem;
+    max-width: 90%;
+    padding: 8px 12px;
+  }
+
+  input[type="text"] {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+
+  button[type="submit"],
+  #mic-btn {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .theme-toggle {
+    right: 10px;
+  }
+}
 
 #mic-btn:hover {
   background-color: #004d40;
