@@ -17,7 +17,7 @@ def get_chunk_embeddings(chunks):
 
 # Load once
 CHUNKS = load_text_chunks()
-CHUNK_EMBEDDINGS = get_chunk_embeddings(CHUNKS)]
+CHUNK_EMBEDDINGS = get_chunk_embeddings(CHUNKS)
 
 def retrieve_context(query, top_k=3):
     query_vec = co.embed(texts=[query], model="embed-english-v3.0").embeddings[0]
