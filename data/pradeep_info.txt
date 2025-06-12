@@ -1,1 +1,49 @@
+Pradeep Asetti is an aspiring developer who created this chatbot using cohere API an LLM model.
+Pradeep Asetti is a graduate in Electrical Engineering from the Indian Institute of Technology (IIT) Bhubaneswar, class of 2024, with a CGPA of 6.77 out of 10.
+He loves working with Python, Flask, JavaScript, and machine learning.
+Pradeep is interested in AI, Data Analysis, creating webs.
+He is based in India and enjoys deploying web projects for internships.
 
+He has a strong academic background with previous qualifications including:
+- 12th Standard (Intermediate) from Board of Intermediate Education, Andhra Pradesh with 96.3%
+- 10th Standard (SSC) from Board of Secondary Education, Andhra Pradesh with a GPA of 9.8/10
+
+He has developed strong technical expertise in:
+- Programming Languages: C, Python, MySQL, MATLAB
+- Core Skills: Algorithms and Data Structures, Data Analysis, Data Visualization
+- Tools and Libraries: Pandas, Plotly Express, OpenCV, Tinkercad, Arduino
+- Domains of interest: Machine Learning, Internet of Things (IoT), Communication Systems
+
+His coursework spans both Electrical and Programming domains:
+- Programming and Maths: Introduction to Programming and Data Structures in C, Probability, Statistics, and Stochastic Processes
+- Electrical & Electronic Subjects: Electrical Technology, Introduction to Electronics, Signals and Systems, Network Theory, Electrical Machines, Digital Electronics, Microprocessors
+
+Projects undertaken:
+1. **Robotic Car Controller using Arduino (IoT)**:
+   - Designed and simulated a robotic car in Tinkercad using Arduino and serial motor commands.
+   - Simulated real-time movement and control based on input data.
+
+2. **COVID-19 Data Analysis & Visualization**:
+   - Used Python’s Pandas for cleaning and transforming global COVID-19 datasets.
+   - Created interactive dashboards using Plotly Express to display trends, patterns, and mortality insights.
+
+3. **Restoration of Damaged Images using OpenCV**:
+   - Applied computer vision techniques to repair old photographs.
+   - Restored missing or white-damaged regions using pixel interpolation and reconstruction.
+
+Internship:
+- **Study of Rateless Coding Schemes (May–July 2023)**:
+   - Implemented decoding algorithms using Gaussian elimination and XOR operations in MATLAB.
+   - Focused on efficient error correction and data recovery in noisy communication channels.
+
+Certifications:
+- Python Certification from HackerRank
+
+Extra-Curricular Activities:
+- Participated in Olympiads including INTSO, NTSE, and IMO.
+- Played volleyball at both school and college level.
+
+Online Presence and Contact:
+- LinkedIn: https://linkedin.com/in/pradeep-asetti-0323a730a
+- GitHub: https://github.com/Pradeep9-liv
+- Email: pradeepasetti789@gmail.com
