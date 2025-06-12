@@ -42,7 +42,7 @@ def ask():
 
     response = co.generate(
         model='command-r-plus',  # You can also try command-xlarge
-        prompt=user_message,
+        prompt=prompt,
         max_tokens=300,
         temperature=0.7
     )
