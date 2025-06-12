@@ -3,6 +3,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import cohere
 import os
+from rag import load_rag, retrieve_context
 
 app = Flask(__name__)
 # Set Flask secret key from environment variable (fallback only used for local dev)
@@ -21,6 +22,8 @@ if not cohere_api_key:
     raise ValueError("COHERE_API_KEY environment variable not set!")
 co = cohere.Client(cohere_api_key)
 
+# Load RAG index
+rag_index, rag_chunks = load_rag()
 
 @app.route('/')
 def index():
@@ -33,9 +36,9 @@ def ask():
     user_message = request.json['message']
     # Get previous chat history (up to last 5 exchanges)
     history = session.get('chat_history', [])
-
+    context = retrieve_context(user_message, rag_index, rag_chunks)
     # Create context prompt for Cohere
-    prompt = ""
+    prompt = f"Context:\n{context}\n\n"
     for turn in history[-5:]:
         prompt += f"User: {turn['user']}\nBot: {turn['bot']}\n"
     prompt += f"User: {user_message}\nBot:"
