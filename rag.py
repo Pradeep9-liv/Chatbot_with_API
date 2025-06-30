@@ -14,7 +14,7 @@ def get_chunk_embeddings(chunks):
     response = co.embed(
         texts=chunks,
         model="embed-english-v3.0",
-        input_type="search_document"  # ✅ Required by this model
+        input_type="search_document" 
     )
     return np.array(response.embeddings)
 
